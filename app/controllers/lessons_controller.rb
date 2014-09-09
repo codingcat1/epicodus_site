@@ -10,17 +10,32 @@ class LessonsController < ApplicationController
   end
 
   def new
+    @lesson = Lesson.new
     render('lessons/new.html.erb')
   end
 
   def create
-    @lesson = Lesson.create(:name => params[:name],
-                            :description => params[:description])
+    @lesson = Lesson.create(params[:lessons])
     if @lesson.save
       flash[:notice] = "You successfully created a lesson!"
       redirect_to("/lessons/#{@lesson.id}")
     else
       render('lessons/new.html.erb')
+    end
+  end
+
+  def edit
+    @lesson = Lesson.find(params[:id])
+    render('lessons/edit.html.erb')
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update(params[:lessons])
+      flash[:notice] = "You successfully updated this lesson!"
+      redirect_to("/lessons/#{@lesson.id}")
+    else
+      render('lessons/edit.html.erb')
     end
   end
 end

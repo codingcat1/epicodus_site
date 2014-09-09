@@ -1,9 +1,9 @@
+<% content_for(:title, "Add a lesson") %>
 <h1>New lesson</h1>
 
+<%= render('layouts/errors', :object => @lesson) %>
+
 <form action="/lessons" method="post">
-  <label for="lesson_name">Name</label>
-  <input id="lesson_name" name="name" type="text">
-  <label for="lesson_description">Description</label>
-  <input id="lesson_description" name="description" type="text">
-  <button>Create Lesson</button>
+  <%= render('form') %>
+  <button type="submit" class="btn btn-info">Create Lesson</button>
 </form>
