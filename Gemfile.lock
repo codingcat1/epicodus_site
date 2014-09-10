@@ -148,5 +148,6 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   shoulda-matchers
+  sprockets-rails
   turbolinks
   uglifier

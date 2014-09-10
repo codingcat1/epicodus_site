@@ -8,6 +8,9 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'sprockets-rails'
 
 group :development do
   gem 'better_errors'
@@ -23,8 +26,7 @@ group :test do
   gem 'shoulda-matchers'
 end
 
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
+
 
 
 

@@ -1,7 +1,15 @@
 
 
-<label for="lesson_name">Name</label>
+<label for="lesson_name">Name:</label>
 <input id="lesson_name" name="lessons[name]" type="text" value="<%= @lesson.name %>">
-<label for="lesson_description">Description</label>
-<input id="lesson_description" name="lessons[description]" class="form-control" rows="2" value="<%= @lesson.description %>"</textarea>
+<br>
+<label for="lesson_description">Description:</label>
+<textarea name="lessons[description]" class="form-control" rows="3"></textarea>
+<label for="lesson_section_id">Add to Section:</label>
+<select name="lessons[section_id]">
+  <% @sections.each do |section| %>
+    <option value="<%= section.id %>"><%= section.name %></option>
+  <% end %>
+</select>
+
 
