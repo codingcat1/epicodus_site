@@ -11,6 +11,7 @@ class SectionsController < ApplicationController
 
   def show
     @section = Section.find(params[:id])
+    @lessons = Lesson.all
     render('sections/show.html.erb')
   end
 
