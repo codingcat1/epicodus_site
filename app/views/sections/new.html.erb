@@ -1,0 +1,9 @@
+<% content_for(:title, "Add a Section") %>
+<h1>New Section</h1>
+
+<%= render('layouts/errors', :object => @section) %>
+
+<form action="/sections" method="post">
+  <%= render('form') %>
+  <button type="submit" class="btn btn-danger">Create Section</button>
+</form>
